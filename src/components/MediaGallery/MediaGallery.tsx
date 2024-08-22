@@ -140,9 +140,11 @@ const MediaGallery = ({ resources }: MediaGalleryProps) => {
                         <CldImage
                           width={resource.width}
                           height={resource.height}
-                          src={resource.public_id}
+                          src={resource.secure_url}
                           alt=""
-                          sizes="100vw"
+                          sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          33vw"
                         />
                       </Link>
                     </div>
