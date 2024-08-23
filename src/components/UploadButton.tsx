@@ -3,7 +3,11 @@ import { CldUploadButton } from 'next-cloudinary';
 import { Upload } from 'lucide-react';
 
 const UploadButton = () => {
-  return <CldUploadButton signatureEndpoint="/api/sign-cloudinary-params">
+  return <CldUploadButton 
+            signatureEndpoint="/api/sign-cloudinary-params"
+            options={{
+              autoMinimize: true
+            }}>
     <span className='flex gap-2 items-center'>
     <Upload className="h-4 w-4" /> Upload
     </span>
