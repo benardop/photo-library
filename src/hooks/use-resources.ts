@@ -14,5 +14,7 @@ export function useResources(options: UseResources) {
     },
     initialData: options?.initialResources
   })
-   console.log('resources', resources)
+   return {
+    resources
+   }
 }

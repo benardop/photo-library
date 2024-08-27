@@ -12,6 +12,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '
 import { CldImage } from 'next-cloudinary';
 import { useQuery } from '@tanstack/react-query';
 import { CloudinaryResource } from '@/types/cloudinary';
+import { useResources } from '@/hooks/use-resources';
 
 
 interface MediaGalleryProps {
@@ -20,15 +21,11 @@ interface MediaGalleryProps {
 
 const MediaGallery = ({ resources : initialResources }: MediaGalleryProps) => {
 
-  const {data: resources} = useQuery({
-    queryKey: ['resources'],
-    queryFn: async () => {
-      const { data } = await fetch('/api/resources').then(r => r.json());
-      return data;
-    },
-    initialData: initialResources
-  })
-   console.log('resources', resources)
+  const { resources } = useResources({
+     initialResources
+  });
+
+  console.log('resources', resources);
   const [selected, setSelected] = useState<Array<string>>([]);
   const [creation, setCreation] = useState();
 
