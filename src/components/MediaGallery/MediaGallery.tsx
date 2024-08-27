@@ -11,13 +11,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { CldImage } from 'next-cloudinary';
 import { useQuery } from '@tanstack/react-query';
+import { CloudinaryResource } from '@/types/cloudinary';
 
-interface CloudinaryResource {
-  height: number;
-  public_id: string;
-  width: number;
-  secure_url: string;
-}
+
 interface MediaGalleryProps {
   resources: Array<CloudinaryResource>
 }
