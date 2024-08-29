@@ -25,10 +25,8 @@ const MediaGallery = ({ resources : initialResources }: MediaGalleryProps) => {
      initialResources
   });
 
-  console.log('resources', resources);
   const [selected, setSelected] = useState<Array<string>>([]);
   const [creation, setCreation] = useState();
-
   /**
    * handleOnClearSelection
    */
@@ -36,7 +34,6 @@ const MediaGallery = ({ resources : initialResources }: MediaGalleryProps) => {
   function handleOnClearSelection() {
     setSelected([]);
   }
-
   /**
    * handleOnCreationOpenChange
    */
